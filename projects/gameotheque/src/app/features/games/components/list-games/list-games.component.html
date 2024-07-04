@@ -1,3 +1,13 @@
-<p>list-games works!</p>
 
-<app-table-games></app-table-games>
+<app-main-filters></app-main-filters>
+
+<app-table-games
+  title="liste de jeux"
+  [items]="videoGameList"
+  (toCreate)="prepCreation()"
+>
+</app-table-games>
+
+@if (readyToCreate()) {
+<app-create-video-games></app-create-video-games>
+}

@@ -1,0 +1,5 @@
+<select name="" id="">
+  @for (item of items$ | async; track item.name) {
+  <option value="{{ item.name }}">{{ item.name }}</option>
+  }
+</select>

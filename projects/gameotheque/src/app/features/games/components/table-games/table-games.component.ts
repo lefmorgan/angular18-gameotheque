@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { VideoGame } from '../../models/video-game';
 
 @Component({
@@ -9,5 +9,11 @@ import { VideoGame } from '../../models/video-game';
   styleUrl: './table-games.component.scss'
 })
 export class TableGamesComponent {
-  items = Input.required<VideoGame[]>
+  items = input.required<VideoGame[]>();
+  toCreate = output<void>();
+  title = input<string>('');
+
+  addVideoGame() : void {
+     this.toCreate.emit();
+  }
 }

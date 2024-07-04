@@ -1,1 +1,17 @@
-<p>table-games works!</p>
+<h2>{{title()}}</h2>
+<table>
+    <tbody>
+        @for (videoGame of items(); track videoGame.name) {
+            <tr>
+                <td>
+                    {{videoGame.name}}
+                </td>
+                <td>
+                    {{videoGame.dateSortie}}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button (click)="addVideoGame()"></button>
