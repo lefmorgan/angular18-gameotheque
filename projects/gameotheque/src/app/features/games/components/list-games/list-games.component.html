@@ -1,13 +1,19 @@
-
 <app-main-filters></app-main-filters>
-
-<app-table-games
+<!-- @if(videoGame$ | async; as videoGameList) {
+  <app-table-games
   title="liste de jeux"
   [items]="videoGameList"
   (toCreate)="prepCreation()"
 >
 </app-table-games>
+} -->
 
-@if (readyToCreate()) {
+@if(videoGames$$(); as videoGameList) {
+<app-table-games
+  title="Liste des jeux-vidéos"
+  [items]="videoGameList"
+  (toCreate)="prepCreation()"
+/>
+} @if (readyToCreate()) {
 <app-create-video-games></app-create-video-games>
 }

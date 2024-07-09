@@ -1,10 +1,10 @@
 <h2>{{title()}}</h2>
 <table>
     <tbody>
-        @for (videoGame of items(); track videoGame.name) {
+        @for (videoGame of items(); track videoGame.nom) {
             <tr>
                 <td>
-                    {{videoGame.name}}
+                    {{videoGame.nom}}
                 </td>
                 <td>
                     {{videoGame.dateSortie}}

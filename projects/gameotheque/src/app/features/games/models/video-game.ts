@@ -1,4 +1,6 @@
 export interface VideoGame {
-    name: string;
+    nom: string;
     dateSortie: Date
 }
+
+export type VideoGames = VideoGame[];
