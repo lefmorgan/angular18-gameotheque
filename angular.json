@@ -30,6 +30,7 @@
               "projects/gameotheque/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/rose-red.css",
               "projects/gameotheque/src/styles.scss"
             ],
             "scripts": []
@@ -96,6 +97,7 @@
               "projects/gameotheque/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/rose-red.css",
               "projects/gameotheque/src/styles.scss"
             ],
             "scripts": []
