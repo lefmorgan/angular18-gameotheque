@@ -1,6 +1,6 @@
 export interface VideoGame {
     nom: string;
-    dateSortie: Date
+    releaseDate: Date
 }
 
 export type VideoGames = VideoGame[];
