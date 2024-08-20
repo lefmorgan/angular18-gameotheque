@@ -21,7 +21,6 @@
             "index": "projects/gameotheque/src/index.html",
             "browser": "projects/gameotheque/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/gameotheque/tsconfig.app.json",
             "inlineStyleLanguage": "scss",

@@ -1,2 +1,6 @@
 <h1>Ajoute ton jeu-video</h1>
+@if(isSaving())
+{
+    <mat-spinner></mat-spinner>
+}
 <app-form-video-game (saveItem)="saveOne($event)"></app-form-video-game>
