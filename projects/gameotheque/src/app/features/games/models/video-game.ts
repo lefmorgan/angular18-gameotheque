@@ -1,5 +1,5 @@
 export interface VideoGame {
-    nom: string;
+    label: string;
     releaseDate: Date
 }
 

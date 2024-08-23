@@ -1,5 +1,7 @@
 export const environment = {
-    apis: {
-        people: '<<should be replaced>>'
-    }
+  isProduction: true,
+  apis: {
+    people: '',
+    videoGame: '',
+  },
 };
