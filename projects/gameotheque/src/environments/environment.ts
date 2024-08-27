@@ -3,5 +3,6 @@ export const environment = {
   apis: {
     people: '',
     videoGame: '',
+    gameConsole: '',
   },
 };

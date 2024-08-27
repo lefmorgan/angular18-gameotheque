@@ -6,8 +6,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {
   MatSnackBar,
 } from '@angular/material/snack-bar';
+import { StatePanel } from '../../../../core/custom-types';
 
-type StatePanel = 'success-panel' | 'failed-panel';
 @Component({
   selector: 'app-create-video-games',
   standalone: true,
@@ -28,11 +28,11 @@ export class CreateVideoGamesComponent {
     this.isSaving.set(true);
     this.service.save(item).subscribe({
       next: savedVideoGame => {
-        this.openSnack(`Video Game saved`, 'success-panel');
+        this.openSnack(`Video Game saved`, 'success');
         this.isSaving.set(false)
       },
       error: error => {
-        this.openSnack('Error saving video game', 'failed-panel');
+        this.openSnack('Error saving video game', 'failed');
         this.isSaving.set(false)
       }
     })
