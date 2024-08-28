@@ -29,7 +29,7 @@ export class FormGameConsoleComponent implements OnInit, OnChanges {
   //   version: ['', Validators.required]
   // })
 
-  gameConsoleForm = this.formBuilder.group({
+  gameConsoleForm = this.formBuilder.nonNullable.group({
     label: ['', [Validators.required, Validators.minLength(3)]],
     version: ['', Validators.required],
   });
