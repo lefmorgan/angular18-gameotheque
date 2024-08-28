@@ -5,8 +5,8 @@ import { VideoGames } from "../../models/video-game";
 export const fakeInMemoryGetAllVideoGamesService: GetAllGames = {
     getAll(): Observable<VideoGames> {
         const table: VideoGames = [
-            { releaseDate: new Date(2023, 1, 1), label: 'Abe'},
-            { releaseDate: new Date(2024, 1, 1), label: 'The last of us'}
+            { releaseDate: new Date(2023, 1, 1), label: 'Abe', console: { label: 'Nintendo Switch', version: 'Oled' } },
+            { releaseDate: new Date(2024, 1, 1), label: 'The last of us', console: { label: 'PlayStation 5', version: 'Oculus' } },
         ]
 
         return of(table).pipe(

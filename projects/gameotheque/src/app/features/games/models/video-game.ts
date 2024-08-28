@@ -1,6 +1,9 @@
+import { GameConsole } from "../../game-consoles/models";
+
 export interface VideoGame {
     label: string;
-    releaseDate: Date
+    releaseDate: Date;
+    console: GameConsole
 }
 
 export type VideoGames = VideoGame[];

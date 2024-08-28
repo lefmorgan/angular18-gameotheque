@@ -1,4 +1,4 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, inject, output, signal } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
@@ -9,12 +9,15 @@ import {provideMomentDateAdapter} from '@angular/material-moment-adapter'
 import 'moment/locale/fr';
 import { VideoGame } from '../../models/video-game';
 import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import { GetAllGameConsoleService } from '../../services/get-all-game-console.service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 
 @Component({
   selector: 'app-form-video-game',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, MatDatepickerModule],
+  imports: [FormsModule, MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatSelectModule],
   templateUrl: './form-video-game.component.html',
   styleUrl: './form-video-game.component.scss',
   providers: [
@@ -23,12 +26,14 @@ import { FormsModule } from '@angular/forms';
   ],
 })
 export class FormVideoGameComponent {
+  private consoleService = inject(GetAllGameConsoleService)
  inputIcon = signal('sentiment_very_satisfied')
 
  saveItem = output<VideoGame>()
- item: VideoGame = {label: '', releaseDate: new Date()}
-
+ item: VideoGame = {label: '', releaseDate: new Date(), console: { label: 'Nintendo Switch', version: 'Base'  } }
+consoles$$ = toSignal(this.consoleService.getAll())
  submitToSave(): void {
+  console.log('Submit', this.item)
   this.saveItem.emit(this.item)
  }
 }
