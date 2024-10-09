@@ -3,4 +3,4 @@
 {
     <mat-spinner></mat-spinner>
 }
-<app-form-video-game (saveItem)="saveOne($event)"></app-form-video-game>
+<app-form-video-game [item]="newItem" (saveItem)="saveOne($event)"></app-form-video-game>

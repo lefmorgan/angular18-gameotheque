@@ -20,6 +20,7 @@ export class CreateVideoGamesComponent {
   private readonly service = inject(SaveOneVideoGameService);
   private readonly snackbar = inject(MatSnackBar);
   isSaving = signal(false);
+  newItem: VideoGame = {console: {label: '', version: '', id: 1 }, label: '', releaseDate: new Date}
 
   openSnack(message: string, cssClass: StatePanel) {
     this.snackbar.open(message, '', {duration: 3000, panelClass: [cssClass]  });

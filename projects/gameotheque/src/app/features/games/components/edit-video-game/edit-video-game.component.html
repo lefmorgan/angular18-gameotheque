@@ -1,0 +1,4 @@
+<h1>Edition de ton jeu-video</h1>
+@if(editItem) {
+    <app-form-video-game [item]="editItem" (saveItem)="saveOne($event)"></app-form-video-game>
+}

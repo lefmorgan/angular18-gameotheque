@@ -8,7 +8,7 @@
           name="name"
           matInput
           placeholder="Nom"
-          [(ngModel)]="item.label"
+          [(ngModel)]="item().label"
         />
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       </mat-form-field>
@@ -20,7 +20,7 @@
           name="releaseDate"
           matInput
           [matDatepicker]="picker"
-          [(ngModel)]="item.releaseDate"
+          [(ngModel)]="item().releaseDate"
         />
         <mat-hint>DD/MM/YYYY</mat-hint>
         <mat-datepicker-toggle
@@ -35,7 +35,7 @@
     <div class="col">
       <mat-form-field>
         <mat-label>Console</mat-label>
-        <mat-select [(ngModel)]="item.console" name="console">
+        <mat-select [(ngModel)]="item().console" name="console">
           @for (console of consoles$$(); track console.id) {
           <mat-option [value]="console.id">{{ console.label }}</mat-option>
           }

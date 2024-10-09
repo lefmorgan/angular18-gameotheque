@@ -1,4 +1,4 @@
-import { Component, inject, output, signal } from '@angular/core';
+import { Component, inject, input, OnChanges, output, signal, SimpleChanges } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
@@ -25,15 +25,19 @@ import { toSignal } from '@angular/core/rxjs-interop';
     provideMomentDateAdapter()
   ],
 })
-export class FormVideoGameComponent {
+export class FormVideoGameComponent implements OnChanges {
   private consoleService = inject(GetAllGameConsoleService)
  inputIcon = signal('sentiment_very_satisfied')
 
  saveItem = output<VideoGame>()
- item: VideoGame = {label: '', releaseDate: new Date(), console: { label: 'Nintendo Switch', version: 'Base'  } }
-consoles$$ = toSignal(this.consoleService.getAll())
+ //item: VideoGame = {label: '', releaseDate: new Date(), console: { label: 'Nintendo Switch', version: 'Base'  } }
+ item = input.required<VideoGame>()
+ consoles$$ = toSignal(this.consoleService.getAll())
  submitToSave(): void {
   console.log('Submit', this.item)
-  this.saveItem.emit(this.item)
+  this.saveItem.emit(this.item())
+ }
+ ngOnChanges(changes: SimpleChanges): void {
+   console.info(changes)
  }
 }

@@ -9,7 +9,13 @@
                 <td>
                     {{videoGame.releaseDate}}
                 </td>
+                <td>
+                    <button (click)="goToEdit(videoGame.id)">Edition</button>
+                </td>
             </tr>
+        }
+        @empty {
+            <td>Aucune ligne</td>
         }
     </tbody>
 </table>
